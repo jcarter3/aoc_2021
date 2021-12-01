@@ -1,11 +1,9 @@
 package grid
 
 import (
+	"aoc_2021/lib/helper"
 	"fmt"
-
 	"math"
-
-	"gitlab.com/jscarter3/aoc_go/common/helper"
 )
 
 type Coordinate3 struct {

@@ -1,7 +1,7 @@
 package fileutil
 
 import (
-	"gitlab.com/jscarter3/aoc_go/common/helper"
+	"aoc_2021/lib/helper"
 	"io/ioutil"
 	"strings"
 )

@@ -1,12 +1,11 @@
 package grid
 
 import (
+	"aoc_2021/lib/helper"
 	"fmt"
 	"log"
 	"math"
 	"strings"
-
-	"gitlab.com/jscarter3/aoc_go/common/helper"
 )
 
 type Coordinate struct {
