@@ -1,6 +1,8 @@
 package helper
 
-import "strconv"
+import (
+	"strconv"
+)
 
 func Abs(x int) int {
 	if x < 0 {
@@ -24,6 +26,14 @@ func Atoi(s string) int {
 		panic(err)
 	}
 	return i
+}
+
+func BinaryStringToInt(s string) int {
+	i, err := strconv.ParseInt(s, 2, 64)
+	if err != nil {
+		panic(err)
+	}
+	return int(i)
 }
 
 func IntCompare(a, b int) int {

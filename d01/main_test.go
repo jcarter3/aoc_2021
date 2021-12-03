@@ -1,4 +1,4 @@
-package d01
+package main
 
 import (
 	"aoc_2021/lib/fileutil"

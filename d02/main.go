@@ -1,4 +1,4 @@
-package d02
+package main
 
 import (
 	"aoc_2021/lib/helper"

@@ -1,4 +1,4 @@
-package d01
+package main
 
 func part1(depths []int) int {
 	return countIncreases(depths)
