@@ -53,6 +53,10 @@ func (c *Coordinate) String() string {
 	return fmt.Sprintf("%d, %d", c.X, c.Y)
 }
 
+func (c *Coordinate) Equal(c2 Coordinate) bool {
+	return c.X == c2.X && c.Y == c2.Y
+}
+
 func (c *Coordinate) Distance(c2 Coordinate) int {
 	x := c.X - c2.X
 	y := c.Y - c2.Y
@@ -75,4 +79,27 @@ func (c *Coordinate) Neighbors() []Coordinate {
 		{c.X + 1, c.Y},
 		{c.X - 1, c.Y},
 	}
+}
+
+func (c *Coordinate) PathTo(c2 Coordinate) []Coordinate {
+	path := make([]Coordinate, 0)
+	xStep := 1
+	if c.X == c2.X {
+		xStep = 0
+	} else if c.X > c2.X {
+		xStep = -1
+	}
+	yStep := 1
+	if c.Y == c2.Y {
+		yStep = 0
+	} else if c.Y > c2.Y {
+		yStep = -1
+	}
+	c1 := c.Copy()
+	for !c1.Equal(c2) {
+		path = append(path, c1.Copy())
+		c1.Move(xStep, yStep)
+	}
+	path = append(path, c2)
+	return path
 }
