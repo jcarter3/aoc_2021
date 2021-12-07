@@ -1,6 +1,7 @@
 package helper
 
 import (
+	"math"
 	"strconv"
 )
 
@@ -34,6 +35,20 @@ func BinaryStringToInt(s string) int {
 		panic(err)
 	}
 	return int(i)
+}
+
+func MinMax(nums []int) (int, int) {
+	min := math.MaxInt64
+	max := math.MinInt64
+	for _, i := range nums {
+		if i < min {
+			min = i
+		}
+		if i > max {
+			max = i
+		}
+	}
+	return min, max
 }
 
 func IntCompare(a, b int) int {
