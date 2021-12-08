@@ -38,9 +38,13 @@ func (s *Set[T]) Remove(els ...T) {
 	}
 }
 
-func (s *Set[T]) Has(e T) bool {
-	_, ok := s.data[e]
-	return ok
+func (s *Set[T]) Has(els ...T) bool {
+	for _, e := range els {
+		if _, ok := s.data[e]; !ok {
+			return false
+		}
+	}
+	return true
 }
 
 func (s *Set[T]) List() []T {

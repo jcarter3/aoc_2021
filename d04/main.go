@@ -10,7 +10,7 @@ type Board struct {
 	data [5][5]int
 }
 
-func (b *Board) Check(drawn *set.IntSet) bool {
+func (b *Board) Check(drawn *set.Set[int]) bool {
 	// Check Rows
 	for x := 0; x < 5; x++ {
 		valid := true
@@ -41,7 +41,7 @@ func (b *Board) Check(drawn *set.IntSet) bool {
 	return false
 }
 
-func (b *Board) Sum(drawn *set.IntSet) int {
+func (b *Board) Sum(drawn *set.Set[int]) int {
 	sum := 0
 	for x := 0; x < 5; x++ {
 		for y := 0; y < 5; y++ {
@@ -80,7 +80,7 @@ func parseBoard(lines []string) *Board {
 }
 
 func part1(drawn []int, boards []*Board) int {
-	drawnSet := set.NewIntSet()
+	drawnSet := set.New[int]()
 	for _, i := range drawn {
 		drawnSet.Add(i)
 		for _, b := range boards {
@@ -93,8 +93,8 @@ func part1(drawn []int, boards []*Board) int {
 }
 
 func part2(drawn []int, boards []*Board) int {
-	drawnSet := set.NewIntSet()
-	hasWon := set.NewIntSet()
+	drawnSet := set.New[int]()
+	hasWon := set.New[int]()
 	for _, i := range drawn {
 		drawnSet.Add(i)
 		for bIdx, b := range boards {
