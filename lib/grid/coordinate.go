@@ -72,13 +72,21 @@ func (c *Coordinate) Angle(c2 Coordinate) float64 {
 	//return float64(dx) / float64(dy)
 }
 
-func (c *Coordinate) Neighbors() []Coordinate {
-	return []Coordinate{
+func (c *Coordinate) Neighbors(diagonals bool) []Coordinate {
+	coords := []Coordinate{
 		{c.X, c.Y + 1},
 		{c.X, c.Y - 1},
 		{c.X + 1, c.Y},
 		{c.X - 1, c.Y},
 	}
+	if diagonals {
+		coords = append(coords,
+			Coordinate{c.X + 1, c.Y + 1},
+			Coordinate{c.X - 1, c.Y - 1},
+			Coordinate{c.X + 1, c.Y - 1},
+			Coordinate{c.X - 1, c.Y + 1})
+	}
+	return coords
 }
 
 func (c *Coordinate) PathTo(c2 Coordinate) []Coordinate {

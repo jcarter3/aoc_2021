@@ -59,7 +59,7 @@ func part2(data [][]int) int {
 func mapBasin(g grid.Grid, data [][]int, checked map[grid.Coordinate]struct{}, c grid.Coordinate) int {
 	count := 1
 	checked[c] = struct{}{}
-	for _, n := range c.Neighbors() {
+	for _, n := range c.Neighbors(false) {
 		if _, ok := checked[n]; !ok && g.Valid(n) {
 			cVal := data[c.Y][c.X]
 			nVal := data[n.Y][n.X]
@@ -83,7 +83,7 @@ func findLowPoints(data [][]int) []grid.Coordinate {
 		for x, v := range row {
 			c := grid.Coordinate{X: x, Y: y}
 			lowest := true
-			for _, n := range c.Neighbors() {
+			for _, n := range c.Neighbors(false) {
 				if g.Valid(n) {
 					if v >= data[n.Y][n.X] {
 						lowest = false
