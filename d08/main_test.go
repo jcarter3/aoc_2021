@@ -19,7 +19,7 @@ func Test_Part1(t *testing.T) {
 	lines := fileutil.ReadLines("input.txt")
 	entries := ParseEntries(lines)
 	ans := part1(entries)
-	fmt.Printf("Part 1 - Answer: %d\n", ans)
+	fmt.Printf("Answer: %d\n", ans)
 	if ans != 367 {
 		t.Fail()
 	}
@@ -38,7 +38,7 @@ func Test_Part2(t *testing.T) {
 	lines := fileutil.ReadLines("input.txt")
 	entries := ParseEntries(lines)
 	ans := part2(entries)
-	fmt.Printf("Part 1 - Answer: %d\n", ans)
+	fmt.Printf("Answer: %d\n", ans)
 	if ans != 974_512 {
 		t.Fail()
 	}

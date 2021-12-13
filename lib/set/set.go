@@ -68,6 +68,10 @@ func (s *Set[T]) Separate(s2 *Set[T]) {
 	s.Remove(s2.List()...)
 }
 
+func (s *Set[T]) Clone() *Set[T] {
+	return New[T](s.List()...)
+}
+
 func (s *Set[T]) Pop() interface{} {
 	s.l.RLock()
 

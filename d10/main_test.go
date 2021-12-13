@@ -17,7 +17,7 @@ func Test_Sample1(t *testing.T) {
 func Test_Part1(t *testing.T) {
 	lines := fileutil.ReadLines("input.txt")
 	ans := part1(lines)
-	fmt.Printf("Part 1 - Answer: %d\n", ans)
+	fmt.Printf("Answer: %d\n", ans)
 	if ans != 366027 {
 		t.Fail()
 	}
@@ -34,7 +34,7 @@ func Test_Sample2(t *testing.T) {
 func Test_Part2(t *testing.T) {
 	lines := fileutil.ReadLines("input.txt")
 	ans := part2(lines)
-	fmt.Printf("Part 1 - Answer: %d\n", ans)
+	fmt.Printf("intAnswer: %d\n", ans)
 	if ans != 1_118_645_287 {
 		t.Fail()
 	}

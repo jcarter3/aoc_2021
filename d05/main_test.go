@@ -19,7 +19,7 @@ func Test_Part1(t *testing.T) {
 	data := fileutil.ReadLines("input.txt")
 	segments := ParseData(data)
 	ans := part1(segments)
-	fmt.Printf("Part 1 - Answer: %d\n", ans)
+	fmt.Printf("Answer: %d\n", ans)
 	if ans != 7644 {
 		t.Fail()
 	}
@@ -38,7 +38,7 @@ func Test_Part2(t *testing.T) {
 	data := fileutil.ReadLines("input.txt")
 	segments := ParseData(data)
 	ans := part2(segments)
-	fmt.Printf("Part 2 - Answer: %d\n", ans)
+	fmt.Printf("intAnswer: %d\n", ans)
 	if ans != 18627 {
 		t.Fail()
 	}
