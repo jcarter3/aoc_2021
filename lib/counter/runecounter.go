@@ -21,6 +21,9 @@ func (rc *RuneCounter) AddString(s string) {
 func (rc *RuneCounter) AddRune(r rune) {
 	rc.Counts[r]++
 }
+func (rc *RuneCounter) AddRuneCount(r rune, count int) {
+	rc.Counts[r] += count
+}
 
 func (rc *RuneCounter) Sort() []rune {
 	type pair struct {
